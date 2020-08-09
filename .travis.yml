@@ -6,7 +6,7 @@ php:
 sudo: false
 install:
   - composer install
-  - ./vendor/bin/rr get
+  - ./vendor/bin/rr get-binary
 before_script:
   - if [ $TRAVIS_PHP_VERSION == '7.2' ]; then phpenv config-rm xdebug.ini; fi;
   - rr serve -v
