@@ -4,12 +4,16 @@ php:
   - 7.3
   - 7.4
 sudo: false
+services:
+  - mysql
 install:
   - composer install
   - ./vendor/bin/rr get-binary
 before_script:
-  - if [ $TRAVIS_PHP_VERSION == '7.2' ]; then phpenv config-rm xdebug.ini; fi;
+  - mysql -e 'create database psx;'
   - ./rr serve -v -d &
   - sleep 6
 script:
-  - DB=sqlite SEND=external vendor/bin/phpunit
+  - SEND=external vendor/bin/phpunit
+env:
+  - DB=mysql
