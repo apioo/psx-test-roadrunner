@@ -9,7 +9,7 @@ install:
   - ./vendor/bin/rr get-binary
 before_script:
   - if [ $TRAVIS_PHP_VERSION == '7.2' ]; then phpenv config-rm xdebug.ini; fi;
-  - rr serve -v
+  - ./rr serve -v -d
   - sleep 4
 script:
   - DB=sqlite SEND=external vendor/bin/phpunit
