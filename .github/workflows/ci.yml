@@ -29,7 +29,7 @@ jobs:
       - name: Roadrunner install
         run: ./vendor/bin/rr get-binary
       - name: Run Roadrunner
-        run: ./rr serve -v -d &
+        run: ./rr serve -d &
       - name: Wait
         run: sleep 6
       - name: Run PHPUnit
