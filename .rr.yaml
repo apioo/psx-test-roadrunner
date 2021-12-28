@@ -4,8 +4,11 @@ server:
     - DB: mysql
 http:
   address: "0.0.0.0:8080"
+  access_logs: true
   pool:
     num_workers: 4
+    debug: true
 logs:
   mode: development
+  level: debug
   output: stderr
