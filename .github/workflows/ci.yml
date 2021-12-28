@@ -41,6 +41,8 @@ jobs:
           mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'test1234';" -uroot -proot
       - name: Composer install
         run: composer install --no-interaction --no-ansi --no-progress
+      - name: Roadrunner install
+        run: ./vendor/bin/rr get-binary
       - name: Run Roadrunner
         run: ./rr serve -v -d &
       - name: Wait
