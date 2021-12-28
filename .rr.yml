@@ -1,3 +1,6 @@
+server:
+  command: "php public/index.php"
 http:
-  address:         ":8080"
-  workers.command: "php public/index.php"
+  address: "0.0.0.0:8080"
+  pool:
+    num_workers: 4

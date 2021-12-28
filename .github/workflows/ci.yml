@@ -27,7 +27,7 @@ jobs:
       - name: Composer install
         run: composer install --no-interaction --no-ansi --no-progress
       - name: Roadrunner install
-        run: ./vendor/bin/rr get-binary
+        run: ./vendor/bin/rr get
       - name: Run Roadrunner
         run: ./rr serve -d &
       - name: Wait
