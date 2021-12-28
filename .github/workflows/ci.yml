@@ -33,4 +33,4 @@ jobs:
       - name: Wait
         run: sleep 6
       - name: Run PHPUnit
-        run: vendor/bin/phpunit
+        run: SEND=external vendor/bin/phpunit
