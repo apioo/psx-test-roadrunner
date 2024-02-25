@@ -9,8 +9,8 @@ jobs:
     strategy:
       matrix:
         php-versions:
-          - 8.0
-          - 8.1
+          - 8.2
+          - 8.3
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -33,4 +33,4 @@ jobs:
       - name: Wait
         run: sleep 6
       - name: Run PHPUnit
-        run: SEND=external DB=mysql vendor/bin/phpunit
+        run: SEND=external vendor/bin/phpunit
