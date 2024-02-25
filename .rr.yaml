@@ -1,7 +1,5 @@
 server:
   command: "php public/index.php"
-  env:
-    - DB: mysql
 http:
   address: "0.0.0.0:8080"
   access_logs: true
